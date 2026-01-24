@@ -1,0 +1,7 @@
+[
+{
+  "directory": "C:/Users/beful/Downloads/WSU-SPRING-26/EE234/Proj1/proj1-app/build",
+  "command": "D:\\programs\\2025.1\\Vitis\\gnu\\aarch32\\nt\\gcc-arm-none-eabi\\bin\\arm-none-eabi-gcc.exe  -DSDT -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard  -MMD -MP -specs=C:/Users/beful/Downloads/WSU-SPRING-26/EE234/Proj1/blackboard-platform/export/blackboard-platform/sw/standalone_ps7_cortexa9_0/Xilinx.spec -IC:/Users/beful/Downloads/WSU-SPRING-26/EE234/Proj1/blackboard-platform/export/blackboard-platform/sw/standalone_ps7_cortexa9_0/include -o CMakeFiles\\proj1-app.elf.dir\\PROJ1.S.obj -c C:\\Users\\beful\\Downloads\\WSU-SPRING-26\\EE234\\Proj1\\proj1-app\\src\\PROJ1.S",
+  "file": "C:\\Users\\beful\\Downloads\\WSU-SPRING-26\\EE234\\Proj1\\proj1-app\\src\\PROJ1.S"
+}
+]
