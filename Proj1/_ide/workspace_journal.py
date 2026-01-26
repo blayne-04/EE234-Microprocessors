@@ -1,8 +1,86 @@
-# 2026-01-24T14:29:39.105836700
+# 2026-01-25T18:26:50.772708400
 import vitis
 
 client = vitis.create_client()
 client.set_workspace(path="Proj1")
 
-vitis.dispose()
+platform = client.get_component(name="blackboard-platform")
+status = platform.build()
+
+comp = client.get_component(name="proj1-app")
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
+
+comp.build()
 
