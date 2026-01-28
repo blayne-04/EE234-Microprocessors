@@ -1,3 +1,0 @@
-C:/Users/beful/Downloads/WSU-SPRING-26/EE234/Proj1/blackboard-platform/zynq_fsbl/build/CMakeFiles/fsbl.elf.dir
-C:/Users/beful/Downloads/WSU-SPRING-26/EE234/Proj1/blackboard-platform/zynq_fsbl/build/CMakeFiles/edit_cache.dir
-C:/Users/beful/Downloads/WSU-SPRING-26/EE234/Proj1/blackboard-platform/zynq_fsbl/build/CMakeFiles/rebuild_cache.dir
