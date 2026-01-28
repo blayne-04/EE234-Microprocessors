@@ -36,6 +36,7 @@ export*/
 psu_cortexa53_0/
 psu_cortexr5_0/
 psu_pmu_0/
+.rigel_lopper/
 
 ##############################
 # Compiler Outputs (C / ASM)
