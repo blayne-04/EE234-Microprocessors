@@ -1,4 +1,4 @@
-# 2026-01-28T23:12:45.753092100
+# 2026-01-28T18:34:18.852577200
 import vitis
 
 client = vitis.create_client()
@@ -8,10 +8,6 @@ platform = client.get_component(name="blackboard-platform")
 status = platform.build()
 
 comp = client.get_component(name="proj1-app")
-comp.build()
-
-status = platform.build()
-
 comp.build()
 
 vitis.dispose()

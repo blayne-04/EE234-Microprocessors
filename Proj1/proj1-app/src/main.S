@@ -1,6 +1,6 @@
 .text
 .global main
 main:
-    bl chal1
+    bl chal3
 loop:
     b loop
