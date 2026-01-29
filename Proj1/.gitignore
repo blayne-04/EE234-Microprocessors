@@ -1,21 +1,70 @@
-# Ignore build output directory
-/build
-/export
-
-# Ignore object files and dependent files
-.o
-.d
-
-#Ignore logs folder and log files
-/logs
-.log
-
-#Ignore lock files
-.lock
-
-.bin
-.pdi
+##############################
+# Vitis / Xilinx Workspace
+##############################
+.metadata/
+.sdk/
+.vscode/
+.settings/
 .vitisWorkspace.json
+RemoteSystemsTempFiles/
+_ide/
+_ide/logs/
+_ide/.wsdata/
 
-_ide/logs
-_ide/.wsdata
+##############################
+# Build Output
+##############################
+build/
+Build/
+BUILD/
+export/
+Export/
+EXPORT/
+Debug/
+Release/
+_build*/
+logs/
+*.log
+
+##############################
+# BSP / Platform Generated Files
+##############################
+bsp/
+platform/
+hw_platform*/
+export*/
+psu_cortexa53_0/
+psu_cortexr5_0/
+psu_pmu_0/
+.rigel_lopper/
+
+##############################
+# Compiler Outputs (C / ASM)
+##############################
+*.o
+*.obj
+*.d
+*.elf
+*.map
+*.lst
+*.bin
+*.hex
+*.srec
+*.pdi
+
+##############################
+# Temporary / Cache / Lock Files
+##############################
+*.tmp
+*.cache
+*.swp
+*.swo
+*.lock
+*.autosave
+*.bak
+
+##############################
+# OS / Editor Files
+##############################
+.DS_Store
+Thumbs.db
