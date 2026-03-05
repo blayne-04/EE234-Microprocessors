@@ -1,0 +1,57 @@
+[
+{
+  "directory": "C:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj3-app/proj3-app/build",
+  "command": "D:\\programs\\2025.1\\Vitis\\gnu\\aarch32\\nt\\gcc-arm-none-eabi\\bin\\arm-none-eabi-gcc.exe  -DSDT -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard  -MMD -MP -specs=c:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj3-app/blackboard-platform/export/blackboard-platform/sw/standalone_ps7_cortexa9_0/Xilinx.spec -Ic:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj3-app/blackboard-platform/export/blackboard-platform/sw/standalone_ps7_cortexa9_0/include -o CMakeFiles\\proj3-app.elf.dir\\gpio.S.obj -c C:\\Users\\beful\\Downloads\\WSU-SPRING-26\\EE234\\proj3-app\\proj3-app\\src\\gpio.S",
+  "file": "C:\\Users\\beful\\Downloads\\WSU-SPRING-26\\EE234\\proj3-app\\proj3-app\\src\\gpio.S"
+},
+{
+  "directory": "C:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj3-app/proj3-app/build",
+  "command": "D:\\programs\\2025.1\\Vitis\\gnu\\aarch32\\nt\\gcc-arm-none-eabi\\bin\\arm-none-eabi-gcc.exe  -DSDT -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard  -MMD -MP -specs=c:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj3-app/blackboard-platform/export/blackboard-platform/sw/standalone_ps7_cortexa9_0/Xilinx.spec -Ic:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj3-app/blackboard-platform/export/blackboard-platform/sw/standalone_ps7_cortexa9_0/include -o CMakeFiles\\proj3-app.elf.dir\\main.S.obj -c C:\\Users\\beful\\Downloads\\WSU-SPRING-26\\EE234\\proj3-app\\proj3-app\\src\\main.S",
+  "file": "C:\\Users\\beful\\Downloads\\WSU-SPRING-26\\EE234\\proj3-app\\proj3-app\\src\\main.S"
+},
+{
+  "directory": "C:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj3-app/proj3-app/build",
+  "command": "D:\\programs\\2025.1\\Vitis\\gnu\\aarch32\\nt\\gcc-arm-none-eabi\\bin\\arm-none-eabi-gcc.exe  -DSDT -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard  -MMD -MP -specs=c:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj3-app/blackboard-platform/export/blackboard-platform/sw/standalone_ps7_cortexa9_0/Xilinx.spec -Ic:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj3-app/blackboard-platform/export/blackboard-platform/sw/standalone_ps7_cortexa9_0/include -o CMakeFiles\\proj3-app.elf.dir\\req1.S.obj -c C:\\Users\\beful\\Downloads\\WSU-SPRING-26\\EE234\\proj3-app\\proj3-app\\src\\req1.S",
+  "file": "C:\\Users\\beful\\Downloads\\WSU-SPRING-26\\EE234\\proj3-app\\proj3-app\\src\\req1.S"
+},
+{
+  "directory": "C:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj3-app/proj3-app/build",
+  "command": "D:\\programs\\2025.1\\Vitis\\gnu\\aarch32\\nt\\gcc-arm-none-eabi\\bin\\arm-none-eabi-gcc.exe  -DSDT -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard  -MMD -MP -specs=c:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj3-app/blackboard-platform/export/blackboard-platform/sw/standalone_ps7_cortexa9_0/Xilinx.spec -Ic:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj3-app/blackboard-platform/export/blackboard-platform/sw/standalone_ps7_cortexa9_0/include -o CMakeFiles\\proj3-app.elf.dir\\sevenSegController.S.obj -c C:\\Users\\beful\\Downloads\\WSU-SPRING-26\\EE234\\proj3-app\\proj3-app\\src\\sevenSegController.S",
+  "file": "C:\\Users\\beful\\Downloads\\WSU-SPRING-26\\EE234\\proj3-app\\proj3-app\\src\\sevenSegController.S"
+},
+{
+  "directory": "C:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj3-app/proj3-app/build",
+  "command": "D:\\programs\\2025.1\\Vitis\\gnu\\aarch32\\nt\\gcc-arm-none-eabi\\bin\\arm-none-eabi-gcc.exe  -DSDT -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard  -MMD -MP -specs=c:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj3-app/blackboard-platform/export/blackboard-platform/sw/standalone_ps7_cortexa9_0/Xilinx.spec -Ic:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj3-app/blackboard-platform/export/blackboard-platform/sw/standalone_ps7_cortexa9_0/include -o CMakeFiles\\proj3-app.elf.dir\\req2.S.obj -c C:\\Users\\beful\\Downloads\\WSU-SPRING-26\\EE234\\proj3-app\\proj3-app\\src\\req2.S",
+  "file": "C:\\Users\\beful\\Downloads\\WSU-SPRING-26\\EE234\\proj3-app\\proj3-app\\src\\req2.S"
+},
+{
+  "directory": "C:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj3-app/proj3-app/build",
+  "command": "D:\\programs\\2025.1\\Vitis\\gnu\\aarch32\\nt\\gcc-arm-none-eabi\\bin\\arm-none-eabi-gcc.exe  -DSDT -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard  -MMD -MP -specs=c:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj3-app/blackboard-platform/export/blackboard-platform/sw/standalone_ps7_cortexa9_0/Xilinx.spec -Ic:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj3-app/blackboard-platform/export/blackboard-platform/sw/standalone_ps7_cortexa9_0/include -o CMakeFiles\\proj3-app.elf.dir\\req3.S.obj -c C:\\Users\\beful\\Downloads\\WSU-SPRING-26\\EE234\\proj3-app\\proj3-app\\src\\req3.S",
+  "file": "C:\\Users\\beful\\Downloads\\WSU-SPRING-26\\EE234\\proj3-app\\proj3-app\\src\\req3.S"
+},
+{
+  "directory": "C:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj3-app/proj3-app/build",
+  "command": "D:\\programs\\2025.1\\Vitis\\gnu\\aarch32\\nt\\gcc-arm-none-eabi\\bin\\arm-none-eabi-gcc.exe  -DSDT -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard  -MMD -MP -specs=c:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj3-app/blackboard-platform/export/blackboard-platform/sw/standalone_ps7_cortexa9_0/Xilinx.spec -Ic:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj3-app/blackboard-platform/export/blackboard-platform/sw/standalone_ps7_cortexa9_0/include -o CMakeFiles\\proj3-app.elf.dir\\TTC.S.obj -c C:\\Users\\beful\\Downloads\\WSU-SPRING-26\\EE234\\proj3-app\\proj3-app\\src\\TTC.S",
+  "file": "C:\\Users\\beful\\Downloads\\WSU-SPRING-26\\EE234\\proj3-app\\proj3-app\\src\\TTC.S"
+},
+{
+  "directory": "C:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj3-app/proj3-app/build",
+  "command": "D:\\programs\\2025.1\\Vitis\\gnu\\aarch32\\nt\\gcc-arm-none-eabi\\bin\\arm-none-eabi-gcc.exe  -DSDT -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard  -MMD -MP -specs=c:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj3-app/blackboard-platform/export/blackboard-platform/sw/standalone_ps7_cortexa9_0/Xilinx.spec -Ic:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj3-app/blackboard-platform/export/blackboard-platform/sw/standalone_ps7_cortexa9_0/include -o CMakeFiles\\proj3-app.elf.dir\\reactionGame.S.obj -c C:\\Users\\beful\\Downloads\\WSU-SPRING-26\\EE234\\proj3-app\\proj3-app\\src\\reactionGame.S",
+  "file": "C:\\Users\\beful\\Downloads\\WSU-SPRING-26\\EE234\\proj3-app\\proj3-app\\src\\reactionGame.S"
+},
+{
+  "directory": "C:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj3-app/proj3-app/build",
+  "command": "D:\\programs\\2025.1\\Vitis\\gnu\\aarch32\\nt\\gcc-arm-none-eabi\\bin\\arm-none-eabi-gcc.exe  -DSDT -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard  -MMD -MP -specs=c:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj3-app/blackboard-platform/export/blackboard-platform/sw/standalone_ps7_cortexa9_0/Xilinx.spec -Ic:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj3-app/blackboard-platform/export/blackboard-platform/sw/standalone_ps7_cortexa9_0/include -o CMakeFiles\\proj3-app.elf.dir\\gameHelpers.S.obj -c C:\\Users\\beful\\Downloads\\WSU-SPRING-26\\EE234\\proj3-app\\proj3-app\\src\\gameHelpers.S",
+  "file": "C:\\Users\\beful\\Downloads\\WSU-SPRING-26\\EE234\\proj3-app\\proj3-app\\src\\gameHelpers.S"
+},
+{
+  "directory": "C:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj3-app/proj3-app/build",
+  "command": "D:\\programs\\2025.1\\Vitis\\gnu\\aarch32\\nt\\gcc-arm-none-eabi\\bin\\arm-none-eabi-gcc.exe  -DSDT -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard  -MMD -MP -specs=c:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj3-app/blackboard-platform/export/blackboard-platform/sw/standalone_ps7_cortexa9_0/Xilinx.spec -Ic:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj3-app/blackboard-platform/export/blackboard-platform/sw/standalone_ps7_cortexa9_0/include -o CMakeFiles\\proj3-app.elf.dir\\RTM.S.obj -c C:\\Users\\beful\\Downloads\\WSU-SPRING-26\\EE234\\proj3-app\\proj3-app\\src\\RTM.S",
+  "file": "C:\\Users\\beful\\Downloads\\WSU-SPRING-26\\EE234\\proj3-app\\proj3-app\\src\\RTM.S"
+},
+{
+  "directory": "C:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj3-app/proj3-app/build",
+  "command": "D:\\programs\\2025.1\\Vitis\\gnu\\aarch32\\nt\\gcc-arm-none-eabi\\bin\\arm-none-eabi-gcc.exe  -DSDT -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard  -MMD -MP -specs=c:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj3-app/blackboard-platform/export/blackboard-platform/sw/standalone_ps7_cortexa9_0/Xilinx.spec -Ic:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj3-app/blackboard-platform/export/blackboard-platform/sw/standalone_ps7_cortexa9_0/include -o CMakeFiles\\proj3-app.elf.dir\\ledSubroutines.S.obj -c C:\\Users\\beful\\Downloads\\WSU-SPRING-26\\EE234\\proj3-app\\proj3-app\\src\\ledSubroutines.S",
+  "file": "C:\\Users\\beful\\Downloads\\WSU-SPRING-26\\EE234\\proj3-app\\proj3-app\\src\\ledSubroutines.S"
+}
+]
