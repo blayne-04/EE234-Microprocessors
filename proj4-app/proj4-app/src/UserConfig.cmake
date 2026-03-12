@@ -36,6 +36,7 @@ set(USER_COMPILE_SOURCES
 "uartDefs.S"
 "wrappers/reqWrappers.S"
 "app/sendStr.S"
+"app/receiveStr.S"
 )
 
 # -----------------------------------------

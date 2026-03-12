@@ -2,4 +2,4 @@
 .global main
 
 main:
-    bl req1
+    bl req4

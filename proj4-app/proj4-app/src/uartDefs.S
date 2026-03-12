@@ -24,3 +24,8 @@
 .equ SYS_CLK,    0x000
 
 .equ SETUP_OPCODE, SET_MODE | STOP_BIT | PARITY | DATA_BITS | SYS_CLK
+
+@****************************
+@      Other Constants
+@****************************
+.comm rxBuffer,128

@@ -15,21 +15,28 @@ nameString:
 @***************************
 @   Send Null-Terminated String
 @***************************
+@ 1. load string from r0 into r4
+@ 2. load byte
+@ 3. compare byte to Null, if true, terminate
+@ 4. else call send char 
+@ 5. advance string ptr
+@ 6. repeat steps 2-5
 
 uartSendStr:
-
-    mov r1, r0
+    push {r4}
+    mov r4, r0
 
 nextChar:
 
-    ldrb r0, [r1]
+    ldrb r0, [r4]
     cmp r0, #0
-    beq done
+    beq terminate
 
     bl uart1SendChar
 
-    add r1, r1, #1
+    add r4, r4, #1
     b nextChar
 
-done:
+terminate:
+    pop {r4}
     bx lr

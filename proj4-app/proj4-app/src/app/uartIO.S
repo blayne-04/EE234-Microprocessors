@@ -43,6 +43,6 @@ awaitReceive:
     bne awaitReceive
 
     ldr r1, =UART1_FIFO
-    ldr r0, [r1]
+    ldrb r0, [r1]
 
     bx lr
