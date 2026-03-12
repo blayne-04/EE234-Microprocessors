@@ -1,0 +1,27 @@
+[
+{
+  "directory": "C:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj4-app/proj4-app/build",
+  "command": "D:\\programs\\2025.1\\Vitis\\gnu\\aarch32\\nt\\gcc-arm-none-eabi\\bin\\arm-none-eabi-gcc.exe  -DSDT -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard  -MMD -MP -specs=C:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj4-app/blackboard-platform/export/blackboard-platform/sw/standalone_ps7_cortexa9_0/Xilinx.spec -IC:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj4-app/blackboard-platform/export/blackboard-platform/sw/standalone_ps7_cortexa9_0/include -o CMakeFiles\\proj4-app.elf.dir\\main.S.obj -c C:\\Users\\beful\\Downloads\\WSU-SPRING-26\\EE234\\proj4-app\\proj4-app\\src\\main.S",
+  "file": "C:\\Users\\beful\\Downloads\\WSU-SPRING-26\\EE234\\proj4-app\\proj4-app\\src\\main.S"
+},
+{
+  "directory": "C:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj4-app/proj4-app/build",
+  "command": "D:\\programs\\2025.1\\Vitis\\gnu\\aarch32\\nt\\gcc-arm-none-eabi\\bin\\arm-none-eabi-gcc.exe  -DSDT -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard  -MMD -MP -specs=C:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj4-app/blackboard-platform/export/blackboard-platform/sw/standalone_ps7_cortexa9_0/Xilinx.spec -IC:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj4-app/blackboard-platform/export/blackboard-platform/sw/standalone_ps7_cortexa9_0/include -o CMakeFiles\\proj4-app.elf.dir\\app\\uartReceive.S.obj -c C:\\Users\\beful\\Downloads\\WSU-SPRING-26\\EE234\\proj4-app\\proj4-app\\src\\app\\uartReceive.S",
+  "file": "C:\\Users\\beful\\Downloads\\WSU-SPRING-26\\EE234\\proj4-app\\proj4-app\\src\\app\\uartReceive.S"
+},
+{
+  "directory": "C:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj4-app/proj4-app/build",
+  "command": "D:\\programs\\2025.1\\Vitis\\gnu\\aarch32\\nt\\gcc-arm-none-eabi\\bin\\arm-none-eabi-gcc.exe  -DSDT -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard  -MMD -MP -specs=C:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj4-app/blackboard-platform/export/blackboard-platform/sw/standalone_ps7_cortexa9_0/Xilinx.spec -IC:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj4-app/blackboard-platform/export/blackboard-platform/sw/standalone_ps7_cortexa9_0/include -o CMakeFiles\\proj4-app.elf.dir\\app\\uartIO.S.obj -c C:\\Users\\beful\\Downloads\\WSU-SPRING-26\\EE234\\proj4-app\\proj4-app\\src\\app\\uartIO.S",
+  "file": "C:\\Users\\beful\\Downloads\\WSU-SPRING-26\\EE234\\proj4-app\\proj4-app\\src\\app\\uartIO.S"
+},
+{
+  "directory": "C:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj4-app/proj4-app/build",
+  "command": "D:\\programs\\2025.1\\Vitis\\gnu\\aarch32\\nt\\gcc-arm-none-eabi\\bin\\arm-none-eabi-gcc.exe  -DSDT -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard  -MMD -MP -specs=C:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj4-app/blackboard-platform/export/blackboard-platform/sw/standalone_ps7_cortexa9_0/Xilinx.spec -IC:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj4-app/blackboard-platform/export/blackboard-platform/sw/standalone_ps7_cortexa9_0/include -o CMakeFiles\\proj4-app.elf.dir\\drivers\\ledDriver.S.obj -c C:\\Users\\beful\\Downloads\\WSU-SPRING-26\\EE234\\proj4-app\\proj4-app\\src\\drivers\\ledDriver.S",
+  "file": "C:\\Users\\beful\\Downloads\\WSU-SPRING-26\\EE234\\proj4-app\\proj4-app\\src\\drivers\\ledDriver.S"
+},
+{
+  "directory": "C:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj4-app/proj4-app/build",
+  "command": "D:\\programs\\2025.1\\Vitis\\gnu\\aarch32\\nt\\gcc-arm-none-eabi\\bin\\arm-none-eabi-gcc.exe  -DSDT -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard  -MMD -MP -specs=C:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj4-app/blackboard-platform/export/blackboard-platform/sw/standalone_ps7_cortexa9_0/Xilinx.spec -IC:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj4-app/blackboard-platform/export/blackboard-platform/sw/standalone_ps7_cortexa9_0/include -o CMakeFiles\\proj4-app.elf.dir\\drivers\\uartInit.S.obj -c C:\\Users\\beful\\Downloads\\WSU-SPRING-26\\EE234\\proj4-app\\proj4-app\\src\\drivers\\uartInit.S",
+  "file": "C:\\Users\\beful\\Downloads\\WSU-SPRING-26\\EE234\\proj4-app\\proj4-app\\src\\drivers\\uartInit.S"
+}
+]
