@@ -1,4 +1,4 @@
-.include "../../include/uart_defs.S"
+.include "C:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj4-app/proj4-app/src/uartDefs.S"
 
 .text
 .global configUart1
@@ -62,7 +62,7 @@ resetUart1:
 resetLoop:
 
     ldr r2, [r1]
-    teq r2, r0
+    tst r2, #3
     bne resetLoop
 
     bx lr

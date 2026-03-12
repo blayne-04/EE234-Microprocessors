@@ -28,11 +28,14 @@ set(USER_UNDEFINED_SYMBOLS
 set(USER_INCLUDE_DIRECTORIES
 )
 set(USER_COMPILE_SOURCES
-"main.S"
-"app/uartReceive.S"
 "app/uartIO.S"
+"app/uartReceive.S"
 "drivers/ledDriver.S"
 "drivers/uartInit.S"
+"main.S"
+"uartDefs.S"
+"wrappers/reqWrappers.S"
+"app/sendStr.S"
 )
 
 # -----------------------------------------

@@ -2,5 +2,4 @@
 .global main
 
 main:
-    bl configUart1
-    b receiveLogic
+    bl req1

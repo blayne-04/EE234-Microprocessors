@@ -1,4 +1,4 @@
-.include "../../include/uart_defs.S"
+.include "C:/Users/beful/Downloads/WSU-SPRING-26/EE234/proj4-app/proj4-app/src/uartDefs.S"
 
 .text
 .global uart1SendChar
