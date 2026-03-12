@@ -32,11 +32,13 @@ set(USER_COMPILE_SOURCES
 "app/uartReceive.S"
 "drivers/ledDriver.S"
 "drivers/uartInit.S"
-"main.S"
 "uartDefs.S"
 "wrappers/reqWrappers.S"
 "app/sendStr.S"
 "app/receiveStr.S"
+"main.c"
+"uart.c"
+"uart.h"
 )
 
 # -----------------------------------------
