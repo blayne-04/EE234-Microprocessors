@@ -26,52 +26,65 @@ void subroutine_handler() {
 
     switch(id) {
         case UART1_INT_ID:
-            while(!(UART1_SR & (1 << 1))) { // RX not empty
+            while (!(UART1_SR & (1 << 1))) { // While RX not empty
                 char rx = (char)UART1_FIFO;
-                if (!blink_active) {
-                    UART1_FIFO = rx; // Req 1: Echo
-                    if (rx >= '1' && rx <= '9') target_cycles = rx - '0'; // Req 5: Set count
+                if (blink_active) break;      // Discard if blinking
+                if (rx >= '1' && rx <= '9') {
+                    target_cycles = rx - '0';
+                    UART1_FIFO = rx;           // Echo back confirmation
                 }
             }
             UART1_ISR = 0x01;
             break;
 
         case GTC_INT_ID:
-            if (blink_active) {
-                // ... (Keep existing Req 5 blink logic)
-            } else {
-                // REQUIREMENT 3: 1-second counter logic
-                req3_divider++;
-                if (req3_divider >= 2) {
-                    req3_counter++;
-                    // Print the last digit of the counter
-                    while(UART1_SR & (1 << 4)); // Wait if full
-                    UART1_FIFO = (req3_counter % 10) + '0';
-                    req3_divider = 0;
-                }
+            GTC_ISR = 0x01; // Clear flag
+            if (!blink_active) break;
+
+            toggle_count++;
+
+            // Toggle LED every half second
+            if (GPIO_DATA(0) & RGB_ALL_MASK)
+                GPIO_DATA(0) &= ~RGB_ALL_MASK;
+            else
+                GPIO_DATA(0) |= RGB_ALL_MASK;
+
+            // Each full cycle = 2 toggles
+            if (toggle_count >= target_cycles * 2) {
+                blink_active  = 0;
+                toggle_count  = 0;
+                target_cycles = 0;
+                GPIO_DATA(0) &= ~RGB_ALL_MASK; // Ensure LED off
+                GTC_CR &= ~(0x0E);             // Disable IE, CE, AI
+                isr_putstr("\r\nDone\r\n");
             }
-            GTC_ISR = 0x01;
             break;
 
-        case GPIO_INT_ID:
-        {
+        case GPIO_INT_ID: {
             uint32_t status = GPIO_INT_STAT(1);
-            // BTN4: Start (Req 5)
-            if ((status & BTN4_MASK) && !blink_active && target_cycles > 0) {
-                blink_active = 1;
-                toggle_count = 0;
-                isr_putstr("\r\nStarted\r\n");
-                GTC_CR |= (1 << 2); // Unmute GTC IRQ
+            GPIO_INT_STAT(1) = status; // Clear flags immediately
+
+            if (status & BTN4_MASK) {
+                if (!blink_active && target_cycles > 0) {
+                    blink_active = 1;
+                    toggle_count = 0;
+                    // Sync compare to current time before enabling
+                    GTC_COMP_L = GTC_DR_LOW + 166666667;
+                    GTC_COMP_H = GTC_DR_HIGH;
+                    GTC_ISR    = 0x01;
+                    GTC_CR    |= 0x0E; // Enable IE, CE, AI
+                    isr_putstr("\r\nStarted\r\n");
+                }
             }
-            // BTN5: Stop/Reset (Req 5)
+
             if (status & BTN5_MASK) {
-                blink_active = 0;
+                blink_active  = 0;
+                toggle_count  = 0;
                 target_cycles = 0;
-                GTC_CR &= ~(1 << 2);
+                GTC_CR       &= ~(0x0E); // Disable IE, CE, AI
                 GPIO_DATA(0) &= ~RGB_ALL_MASK;
                 isr_putstr("\r\nStopped\r\n");
             }
-            GPIO_INT_STAT(1) = status;
             break;
         }
     }

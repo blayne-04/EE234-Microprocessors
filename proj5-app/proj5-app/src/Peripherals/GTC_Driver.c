@@ -1,6 +1,6 @@
 #include "../Defs/GTC.h"
 
-void configure_gtc()
+void configure_gtc1()
 {
     // 1. Disable the timer and comparator while configuring
     GTC_CR = 0;
@@ -20,4 +20,24 @@ void configure_gtc()
     GTC_ISR = 0x01;
 
     GTC_CR = 0x0F;
+}
+
+void configure_gtc2() {
+    GTC_CR = 0;                          // Disable everything
+    GTC_COMP_L = GTC_DR_LOW + 166666667; // ~0.5s at 333MHz
+    GTC_COMP_H = GTC_DR_HIGH;
+    GTC_AI     = 166666667;              // Auto-increment 0.5s
+    GTC_ISR    = 0x01;                   // Clear stale flag
+    // Note: IE and CE bits NOT set yet — timer enabled on BTN4 press
+    GTC_CR = 0x01;                       // Enable counter only, no interrupt yet
+}
+
+void configure_gtc(volatile int run_mode)
+{
+    if(run_mode == 0){
+        configure_gtc1();
+    }
+    else {
+        configure_gtc2();
+    }
 }

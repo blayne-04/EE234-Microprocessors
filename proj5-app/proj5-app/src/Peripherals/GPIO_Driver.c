@@ -3,9 +3,9 @@
 void configure_gpio()
 {
     /* --- RGB LED Configuration (Bank 0) --- */
-    // Set Direction to Output (1) for RED LED
+    // Set Direction to Output (1) for LEDs
     GPIO_DIRM(0) |= RGB_ALL_MASK; 
-    // Enable Output for RED LED
+    // Enable Output for LEDs
     GPIO_OEN(0)  |= RGB_ALL_MASK;
 
     /* --- Pushbutton Configuration (Bank 1) --- */
@@ -21,6 +21,8 @@ void configure_gpio()
     
     // 3. Ensure "Any Edge" is disabled (0) to strictly follow Rising Edge
     GPIO_INT_ANY(1)  &= ~(BTN4_MASK | BTN5_MASK);
+
+    GPIO_INT_STAT(1) = (BTN4_MASK | BTN5_MASK); // Clear any stale flags
 
     // 4. Enable interrupts for these specific pins in the GPIO module
     GPIO_INT_EN(1)    = (BTN4_MASK | BTN5_MASK);

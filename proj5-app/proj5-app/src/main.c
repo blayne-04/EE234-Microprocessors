@@ -6,11 +6,11 @@
 
 int main(void) {
     // TOGGLE: 0 = Req 5 (Subroutine), 1 = Req 4 (Flag)
-    run_mode = 1; 
+    run_mode = 0; 
 
     configure_uart1();
     configure_gpio();
-    configure_gtc(); 
+    configure_gtc(run_mode); 
 
     disable_ARM_interrupts();
     
