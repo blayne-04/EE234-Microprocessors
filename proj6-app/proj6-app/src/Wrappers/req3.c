@@ -1,39 +1,71 @@
 #include "../Defs/Wrappers.h"
 
+volatile int16_t req3_gyro_x = 0;
+volatile int16_t req3_gyro_y = 0;
+volatile int16_t req3_gyro_z = 0;
+
+volatile int req3_spi_flag   = 0;
+
+void req3_handler(void)
+{
+    uint32_t id = ICCIAR;
+
+    switch(id) {
+        case GTC_INT_ID:
+            GTC_ISR = 0x01;
+            SPI_start_gyro_read();
+            break;
+
+        case SPI_INT_ID: {
+            (void)SPI_RXD;  // discard junk byte
+
+            uint8_t xl = SPI_RXD, xh = SPI_RXD;
+            uint8_t yl = SPI_RXD, yh = SPI_RXD;
+            uint8_t zl = SPI_RXD, zh = SPI_RXD;
+
+            SPI_CR = (SPI_CR & ~SPI_CR_SS_MASK) | SPI_CR_SS_NONE;
+
+            req3_gyro_x = (int16_t)((xh << 8) | xl);
+            req3_gyro_y = (int16_t)((yh << 8) | yl);
+            req3_gyro_z = (int16_t)((zh << 8) | zl);
+
+            req3_spi_flag = 1;
+            SPI_SR = (1 << 4);
+            break;
+        }
+    }
+
+    ICCEOIR = id;
+}
+
 void req3(void)
 {
     configure_uart1();
     SPI_init();
-    enable_accel();
-    configure_GIC();
+    enable_gyro();
     configure_gtc_1s();
-    register_irq_handler(flag_handler);
+
+    disable_ARM_interrupts();
+    register_irq_handler(req3_handler);
+    configure_GIC();
     enable_arm_interrupts();
 
-    char buf[64];
-    while(1)
-    {
-        if(gtc_flag)
-        {
-            gtc_flag = 0;
-            spi_flag = 0;  // clear any stale SPI flag
+    int counter = 0;
+    while(1) {
+        counter++;
+        if (counter % 5000000 == 0) {
+            uart1_send_str("main loop still running...\r\n");
+        }
 
-            int16_t x = (int16_t)read_axis(AG_OUT_X_XL);
-            int16_t y = (int16_t)read_axis(AG_OUT_Y_XL);
-            int16_t z = (int16_t)read_axis(AG_OUT_Z_XL);
+        if (req3_spi_flag) {
+            req3_spi_flag = 0;
+            char buf[64];
 
-            int32_t x_mg = ((int32_t)x * 61) / 1000;
-            int32_t y_mg = ((int32_t)y * 61) / 1000;
-            int32_t z_mg = ((int32_t)z * 61) / 1000;
-
-            uart1_send_str("--- Accelerometer ---\r\n");
-            sprintf(buf, "X Roll:    %ld mg\r\n", x_mg);
+            sprintf(buf, "X: 0x%04X  Y: 0x%04X  Z: 0x%04X\r\n",
+                    (uint16_t)req3_gyro_x,
+                    (uint16_t)req3_gyro_y,
+                    (uint16_t)req3_gyro_z);
             uart1_send_str(buf);
-            sprintf(buf, "Y Pitch:   %ld mg\r\n", y_mg);
-            uart1_send_str(buf);
-            sprintf(buf, "Z Gravity: %ld mg\r\n", z_mg);
-            uart1_send_str(buf);
-            uart1_send_str("\r\n");
         }
     }
 }

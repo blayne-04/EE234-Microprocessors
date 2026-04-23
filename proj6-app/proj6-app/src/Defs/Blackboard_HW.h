@@ -191,4 +191,21 @@
 #define RGB_GREEN_MASK  0x00040000 // MIO 18 (Bank 0 bit 18)
 #define RGB_ALL_MASK    0x00070000 // All RGB bits in Bank 0
 
+
+// ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+
+// I2C1 Registers (Base: 0xE0005000)
+#define I2C1_CR         (*((volatile uint32_t *) 0xE0005000))
+#define I2C1_SR         (*((volatile uint32_t *) 0xE0005004))
+#define I2C1_ADDR       (*((volatile uint32_t *) 0xE0005008))
+#define I2C1_DATA       (*((volatile uint32_t *) 0xE000500C))
+#define I2C1_ISR        (*((volatile uint32_t *) 0xE0005010))
+#define I2C1_TRANS_SIZE (*((volatile uint32_t *) 0xE0005014))
+#define I2C1_IMR        (*((volatile uint32_t *) 0xE0005020))
+#define I2C1_IER        (*((volatile uint32_t *) 0xE0005024))
+#define I2C1_IDR        (*((volatile uint32_t *) 0xE0005028))
+
+#define LM75B_ADDR      0x48  // 0b1001000
+#define SLCR_I2C_RST    (*((volatile uint32_t *) 0xF8000224))
 #endif

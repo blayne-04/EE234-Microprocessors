@@ -2,7 +2,7 @@
 
 int main(void)
 {
-    int OPMODE = 3;
+    int OPMODE = 1;
 
     switch(OPMODE)
     {

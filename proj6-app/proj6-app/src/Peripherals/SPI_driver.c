@@ -62,3 +62,20 @@ uint8_t SPI_read(uint32_t cs, uint8_t reg)
 
     return result;
 }
+
+
+void SPI_start_gyro_read(void)
+{
+    SPI_CR = (SPI_CR & ~SPI_CR_SS_MASK) | SPI_CR_SS0;
+
+    *(SPI0_BASE + 0x0B) = 7;
+
+    SPI_TXD = LSM9DS1_READ_FLAG | AG_OUT_X_G;
+    SPI_TXD = 0x00;
+    SPI_TXD = 0x00;
+    SPI_TXD = 0x00;
+    SPI_TXD = 0x00;
+    SPI_TXD = 0x00;
+    SPI_TXD = 0x00;
+    SPI_CR |= SPI_CR_START;
+}

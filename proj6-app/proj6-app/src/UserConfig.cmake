@@ -29,8 +29,8 @@ set(USER_INCLUDE_DIRECTORIES
 )
 set(USER_COMPILE_SOURCES
 "main.c"
-"Peripherals/SPI_config.c"
-"Peripherals/inertial_driver.c"
+"Peripherals/SPI_driver.c"
+"Peripherals/peripheral_driver.c"
 "Wrappers/req1.c"
 "Wrappers/req2.c"
 "Wrappers/req3.c"
@@ -40,6 +40,7 @@ set(USER_COMPILE_SOURCES
 "Peripherals/CPU_GIC_driver.c"
 "Peripherals/GPIO_driver.c"
 "Peripherals/GTC_driver.c"
+"Peripherals/I2C_driver.c"
 )
 
 # -----------------------------------------

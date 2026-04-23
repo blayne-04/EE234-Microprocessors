@@ -43,9 +43,10 @@ void configure_GIC() {
     ICCPMR = 0xFF;   // Allow all priorities
     ICCICR = 0x03;   // Enable CPU interface (Secure + Non-secure)
 
-    configure_GIC_ID(GTC_INT_ID,   0x80, 0x03); // GTC - edge
-    configure_GIC_ID(GPIO_INT_ID,  0xA0, 0x02); // GPIO - edge
-    configure_GIC_ID(SPI_INT_ID,  0xA0, 0x00);  // SPI  - level
+    configure_GIC_ID(GTC_INT_ID,  128, 0x03); // edge
+    configure_GIC_ID(GPIO_INT_ID, 160, 0x03); // edge
+    configure_GIC_ID(SPI_INT_ID,  160, 0x01); // level
+    configure_GIC_ID(I2C_INT_ID,  160, 0x01); // level
 
     ICDDCR = 0x01;   // Re-enable distributor
 }
