@@ -1,16 +1,9 @@
 #include "../Defs/CPU_GIC.h"
 
-/**
- * @brief Sends a null-terminated string over UART1.
- * * This function polls the UART Status Register (SR) to ensure the 
- * Transmit FIFO is not full before writing each character.
- * * @param msg Pointer to the string to be transmitted.
- */
 void isr_putstr(char *msg) {
     // Loop until the null terminator ('\0') is reached
     while (*msg) {
         // Wait while the Transmit FIFO is FULL (Bit 4 of UART1_SR)
-        // This prevents overwriting data in the 64-byte hardware buffer.
         while (UART1_SR & (1 << 4)); 
 
         // Write the current character to the Data FIFO and advance the pointer

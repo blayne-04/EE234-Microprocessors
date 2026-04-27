@@ -19,7 +19,7 @@ void configure_gtc1()
     // 5. Clear any pending interrupt status
     GTC_ISR = 0x01;
 
-    GTC_CR = 0x0F;
+    GTC_CR = 0x01;
 }
 
 void configure_gtc2() {
@@ -28,8 +28,7 @@ void configure_gtc2() {
     GTC_COMP_H = GTC_DR_HIGH;
     GTC_AI     = 166666667;              // Auto-increment 0.5s
     GTC_ISR    = 0x01;                   // Clear stale flag
-    // Note: IE and CE bits NOT set yet — timer enabled on BTN4 press
-    GTC_CR = 0x01;                       // Enable counter only, no interrupt yet
+    GTC_CR = 0x0F;
 }
 
 void configure_gtc(volatile int run_mode)

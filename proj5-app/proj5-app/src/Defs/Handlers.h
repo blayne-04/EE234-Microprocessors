@@ -22,19 +22,10 @@ extern volatile uint32_t last_gpio_status;
 
 /* --- Logic Handlers --- */
 
-/** * Requirement 1, 2, 3, 5 Handler
- * Performs all logic, counting, and UART echos inside the interrupt context.
- */
 void subroutine_handler();
 
-/** * Requirement 4 Handler
- * Only captures data and sets flags. All processing is deferred to main.
- */
 void flag_handler();
 
-/** * Utility: Sends a string over UART safely during an interrupt.
- * Polls the Transmit Full bit to prevent FIFO overflow.
- */
 void isr_putstr(char *msg);
 
 #endif

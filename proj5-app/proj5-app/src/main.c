@@ -10,7 +10,6 @@ int main(void) {
 
     configure_uart1();
     configure_gpio();
-    configure_gtc(run_mode); 
 
     disable_ARM_interrupts();
     
@@ -21,6 +20,7 @@ int main(void) {
     configure_GIC();
     configure_uart1_interrupt();
     enable_arm_interrupts();
+    configure_gtc(run_mode); 
 
     // Req 4 variables
     int tick_divider = 0;
@@ -30,7 +30,7 @@ int main(void) {
         if (run_mode == 1) {
             // Process Flags
             if (uart_flag) {
-                UART1_FIFO = last_uart_char; // Echo
+                UART1_FIFO = last_uart_char;
                 uart_flag = 0;
             }
             if (gtc_flag) {
