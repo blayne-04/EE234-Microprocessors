@@ -2,7 +2,7 @@
 
 int main(void)
 {
-    int PROGRAM = 2;
+    int PROGRAM = 5;
 
     switch(PROGRAM)
     {

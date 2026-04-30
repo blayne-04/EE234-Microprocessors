@@ -58,68 +58,31 @@
 // ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
 // ============================================================
-// TTC0 Register Addresses (Base: 0xF8001000)
-// Offsets per counter n (1,2,3): base_offset + (n-1)*4
+// TTC0 Registers (Base: 0xF8001000, counter n = 1/2/3)
 // ============================================================
-#define TTC0_BASE               0xF8001000
+#define TTC0_BASE            0xF8001000
 
-// TTC0_CLK_CTRL(n): 0x00/04/08
-#define TTC0_CLK_CTRL(n)        (*((volatile uint32_t *)(TTC0_BASE + 0x00 + ((n)-1)*4)))
+#define TTC0_CLK_CTRL(n)     (*((volatile uint32_t *)(TTC0_BASE + 0x00 + ((n)-1)*4)))
+#define TTC0_CNT_CTRL(n)     (*((volatile uint32_t *)(TTC0_BASE + 0x0C + ((n)-1)*4)))
+#define TTC0_INTERVAL(n)     (*((volatile uint32_t *)(TTC0_BASE + 0x24 + ((n)-1)*4)))
+#define TTC0_MATCH(n, m)     (*((volatile uint32_t *)(TTC0_BASE + 0x30 + ((n)-1)*12 + ((m)-1)*4)))
+#define TTC0_ISR(n)          (*((volatile uint32_t *)(TTC0_BASE + 0x54 + ((n)-1)*4)))
+#define TTC0_IER(n)          (*((volatile uint32_t *)(TTC0_BASE + 0x60 + ((n)-1)*4)))
 
-// TTC0_CNT_CTRL(n): 0x0C/10/14
-#define TTC0_CNT_CTRL(n)        (*((volatile uint32_t *)(TTC0_BASE + 0x0C + ((n)-1)*4)))
+// CNT_CTRL bits (verified against Zynq-7000 TRM)
+#define TTC_CNT_POL          (1 << 6)  // Polarity: 1 = active-high pulse
+#define TTC_CNT_WAVE_DIS     (1 << 5)  // Waveform disable (ACTIVE LOW: 0 = enabled)
+#define TTC_CNT_RST          (1 << 4)  // Counter reset (self-clearing)
+#define TTC_CNT_MATCH        (1 << 3)  // Match enable
+#define TTC_CNT_INT          (1 << 1)  // Interval mode
+#define TTC_CNT_DIS          (1 << 0)  // Counter disable (1 = stopped)
 
-// TTC0_CNTVAL(n): 0x18/1C/20  (read only)
-#define TTC0_CNTVAL(n)          (*((volatile uint32_t *)(TTC0_BASE + 0x18 + ((n)-1)*4)))
+// CLK_CTRL bits
+#define TTC_CLK_PRESCALE(n)  (((n) & 0xF) << 1)  // Divides clock by 2^(N+1)
+#define TTC_CLK_EN           (1 << 0)             // Prescale enable
 
-// TTC0_INTERVAL(n): 0x24/28/2C
-#define TTC0_INTERVAL(n)        (*((volatile uint32_t *)(TTC0_BASE + 0x24 + ((n)-1)*4)))
-
-// TTC0_MATCH(n, m): 0x30-0x50, 9 registers total (3 per counter)
-// Counter n (1-3), Match register m (1-3)
-#define TTC0_MATCH(n, m)        (*((volatile uint32_t *)(TTC0_BASE + 0x30 + ((n)-1)*12 + ((m)-1)*4)))
-
-// TTC0_ISR(n): 0x54/58/5C  (clear on read)
-#define TTC0_ISR(n)             (*((volatile uint32_t *)(TTC0_BASE + 0x54 + ((n)-1)*4)))
-
-// TTC0_IER(n): 0x60/64/68
-#define TTC0_IER(n)             (*((volatile uint32_t *)(TTC0_BASE + 0x60 + ((n)-1)*4)))
-
-// TTC0_EVENTCNTL(n): 0x6C/70/74
-#define TTC0_EVENTCNTL(n)       (*((volatile uint32_t *)(TTC0_BASE + 0x6C + ((n)-1)*4)))
-
-// TTC0_EVENT(n): 0x78/7C/80  (read only)
-#define TTC0_EVENT(n)           (*((volatile uint32_t *)(TTC0_BASE + 0x78 + ((n)-1)*4)))
-
-// ============================================================
-// TTC0 CLK_CTRL bit definitions  (TTC0_CLKCNT_X)
-// ============================================================
-#define TTC_CLK_CE              (1 << 6)    // Negative edge select (external clk only)
-#define TTC_CLK_CS              (1 << 5)    // Clock source: 1=external, 0=111MHz PS
-#define TTC_CLK_PRESCALE(n)     (((n) & 0xF) << 1) // Prescale value N; divides by 2^(N+1)
-#define TTC_CLK_EN              (1 << 0)    // Prescale enable
-
-// ============================================================
-// TTC0 CNT_CTRL bit definitions  (TTC0_CNTL_X)
-// ============================================================
-#define TTC_CNT_PL              (1 << 6)    // Polarity: 1=high-to-low on match (active high pulse)
-#define TTC_CNT_OW              (1 << 5)    // Output waveform enable
-#define TTC_CNT_CR              (1 << 4)    // Counter reset (self-clearing)
-#define TTC_CNT_ME              (1 << 3)    // Match enable
-#define TTC_CNT_DC              (1 << 2)    // Decrement (down count)
-#define TTC_CNT_IM              (1 << 1)    // Interval mode
-#define TTC_CNT_OD              (1 << 0)    // Output disable/freeze (1=freeze, 0=run)
-
-
-// ============================================================
-// TTC0 IER bit definitions  (TTC0_IER_X)
-// ============================================================
-#define TTC_IER_EV              (1 << 5)    // Event timer overflow interrupt enable
-#define TTC_IER_CO              (1 << 4)    // Counter overflow interrupt enable
-#define TTC_IER_M3              (1 << 3)    // Match 3 interrupt enable
-#define TTC_IER_M2              (1 << 2)    // Match 2 interrupt enable
-#define TTC_IER_M1              (1 << 1)    // Match 1 interrupt enable
-#define TTC_IER_IV              (1 << 0)    // Interval interrupt enable
+// IER bits
+#define TTC_IER_IV           (1 << 0)  // Interval interrupt enable
 
 // ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 

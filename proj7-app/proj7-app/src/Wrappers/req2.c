@@ -54,7 +54,7 @@ void req2(void)
     register_irq_handler(irq_handler2);
 
     /* Init TTC0 at min angle */
-    configure_TTC0(34722, 30000);
+    configure_TTC0(34722, MATCH_MIN);
 
     enable_arm_interrupts();
     

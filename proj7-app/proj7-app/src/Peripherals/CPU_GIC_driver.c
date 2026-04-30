@@ -36,7 +36,7 @@ void configure_GIC() {
     ICCPMR = 0xFF;   // Allow all priorities
     ICCICR = 0x03;   // Enable CPU interface (Secure + Non-secure)
 
-    configure_GIC_ID(TTC0_1_INT_ID, 128, 0x01); /* Level sensitive, prio 128*/
+    configure_GIC_ID(TTC0_1_INT_ID, 128, 0x03); /* Level sensitive, prio 128*/
 
     ICDDCR = 0x01;   // Re-enable distributor
 }

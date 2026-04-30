@@ -29,7 +29,7 @@ void req1(void)
 
     // 3. Configure TTC0 for a 20ms period and 1.5ms center pulse
     // Ticks calculated for 111.111MHz clock with a 64 prescaler
-    configure_TTC0(34722, 2604);
+    configure_TTC0(34722, 17361);
 
     /* Enable interrupts! */
     enable_arm_interrupts();
